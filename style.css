@@ -1,0 +1,211 @@
+/*Main text*/
+html{
+  scroll-behavior: smooth;
+  font-family: times new roman, 'Times New Roman';
+
+}
+body{
+    background:#121212;
+}
+/*homepage*/
+h1{
+	color: #d8d4cf;
+  position: static;
+  margin-left: -40%;
+	font-size: 45px;
+	font-family: times new roman, arial;
+}
+/*aboutus*/
+h2{
+	color: #000000;
+  font-weight: bold;
+  font-family: times new roman, arial;
+	font-size: 45px;
+  padding:5%;
+  backdrop-filter: blur(5px);
+  background-color: #b93b3ba2;
+  padding: 1.5%;
+  width: auto;
+  position:absolute;
+
+}
+/*brand*/
+h3{
+	color: #d8d8d8;
+  font-weight: bold;
+  font-family: times new roman, arial;
+	font-size: 45px;
+  padding:5%;
+  backdrop-filter: blur(5px);
+  background-color: #b93b3ba2;
+  padding: 1.5%;
+  width: auto;
+  position:absolute;
+  margin-top: -30%;
+}
+/*contact page*/
+h4{
+	color: #d8d4cf;
+  position: static;
+  margin-left: -40%;
+	font-size: 45px;
+	font-family:pacifica-w00-condensed,fantasy;
+  font-weight: 550;
+
+
+}
+/*about me*/
+h5{
+  background-color: #b93b3ba2;
+	color: #d8d4cf;
+  position: static;
+  margin-top: -30%;
+  margin-left: 20%;
+	font-size: 45px;
+}
+
+/*blockquote*/
+blockquote {
+    color: #d8d4cf;
+    backdrop-filter: blur(1px);
+    font-size: 20px;
+    margin-top: -25%;
+    width: 30%; 
+    margin-right: 40%;
+    position: absolute;
+}
+#bq2 {
+  color: #d8d4cf;
+  font-size: 20px;
+  margin-top: 31%;
+  width: 10%; 
+  margin-left: 60%;
+  position: absolute; 
+}
+#bq3 {
+  color: #d8d4cf;
+    backdrop-filter: blur(1px);
+    font-size: 20px;
+    margin-top: -5%;
+    width: 30%; 
+    margin-right: 40%;
+    position: absolute;
+    text-align:center;
+}
+/*For the side menus*/
+/*menus overall look*/
+ul {
+  margin-top: 0;
+    list-style-type: none ;
+    width: 7.5%;
+    background-color: #121212b9;
+    position: fixed;
+    height: 20%;
+    overflow: hidden;
+    font-family: times new roman, 'Times New Roman';
+  }
+  li a {
+    display: block;
+    color: white;
+    padding: 8px 8px;
+    text-decoration: none;
+    
+  }
+    /*menus when hovered*/
+  li a:hover(.active) {
+    background-color: #663131;
+
+  }
+    /*menus when not hover*/
+  li a:hover:not(.active) {
+    background-color: #663131;
+  }
+    /*hyperlink*/
+  a:link {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+/*Span tag used for blockquote in page*/
+span{
+    width: 80%;
+    background-color: #b95959;
+    display: block;
+    height: 5px;
+    margin-top: 10%;
+}
+#span2{
+  width: 80%;
+  background-color: #b95959;
+  display: block;
+  height: 3px;
+  margin-top: 3%;
+}
+
+/*For the different page sections*/
+section{
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+}
+#homepage{
+  align-items: center;
+  justify-content: center;
+}
+#aboutus{
+  background-image: url(img/aboutus.png);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-attachment: fixed;
+  background-position: center; 
+  
+  align-items: center;
+  justify-content: center;
+ 
+}
+#thebrand{
+  /*slideshow*/
+  background-image: url(img/2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: slide 60s infinite;
+  /*for the center text*/
+  align-items: center;
+  justify-content: center;
+}
+#aboutme{
+  background-image: url(img/cindy.png);
+  background-repeat: no-repeat;
+  background-position: 66%;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact{
+  align-items: center;
+  justify-content: center;
+}
+
+/*key frames for the slideshow*/
+
+@keyframes slide{
+  0%{
+    background-image: url(img/2.jpg);
+  }
+  17.5%{
+    background-image: url(img/1.jpg);
+  }
+  35%{
+    background-image: url(img/3.jpg);
+  }
+  52.5%{
+    background-image: url(img/4.jpg);
+  }
+  70%{
+    background-image: url(img/5.jpg);
+  }
+  87.5%{
+    background-image: url(img/6.jpg);
+  }
+}
