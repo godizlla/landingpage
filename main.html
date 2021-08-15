@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html> 
+
+    <head> 
+        <script src="../Main/dice.js"></script>
+        <script src="../Main/countdown.js"></script>
+        <script src="../Main/class.js"></script>
+        <script src="../Main/dataLoader.js"></script>
+        
+        <link rel="stylesheet" href="../Main/style.css">
+        <title>
+    Kevin's UAT Page
+        </title>
+        <script>
+            //Creating necessary variables for Data Readout.
+            var theTime = new Date();
+            var tempTime = new Date();
+            var time_interval = 5000;
+            var last_iteration = 0;
+            var running = true;
+            var index = 0;
+            var timer;
+            //Puts data into array.
+            var data = getData();
+            //Function to load & display data.
+            function updateDisplay() {
+              theTime = new Date();
+              var timeRead = data[index].time_seconds;
+              if (timeRead >= 5) {
+                document.getElementById("data").rows["seconds"].innerHTML = dataRow(
+                  "Time Elapsed",
+                  data[index].time_seconds,
+                  "seconds"
+                );
+                document.getElementById("data").rows["latitude"].innerHTML = dataRow(
+                  "Latitude",
+                  data[index].latitude,
+                  " "
+                );
+                document.getElementById("data").rows["longitude"].innerHTML = dataRow(
+                  "Longitude",
+                  data[index].longitude,
+                  " "
+                );
+                document.getElementById("data").rows["gpsSensorAlt"].innerHTML =
+                  dataRow("GPS Sensor Altitude", data[index].gps_altitude, " ");
+                document.getElementById("data").rows["bmpSensorAlt"].innerHTML =
+                  dataRow("BMP Sensor Altitude", data[index].bmpSensor_altitude, " ");
+                document.getElementById("data").rows["bmpSensorPres"].innerHTML =
+                  dataRow("BMP Sensor Pressure", data[index].bmpSensor_pressure, " ");
+                document.getElementById("data").rows["bmpSensorTemp"].innerHTML =
+                  dataRow("BMP Sensor Temperature", data[index].bmpSensor_temp, " ");
+                document.getElementById("data").rows["digiSensorTemp"].innerHTML =
+                  dataRow("Digital Sensor Pressure", data[index].digSensor_temp, " ");
+                document.getElementById("data").rows["cssSensorTemp"].innerHTML =
+                  dataRow("CSS Sensor Temperature", data[index].cssSensor_temp, " ");
+                document.getElementById("data").rows["cssSensorECO2"].innerHTML =
+                  dataRow("CSS Sensor ECO2", data[index].cssSensor_eCO2, " ");
+                document.getElementById("data").rows["cssSensorTVOC"].innerHTML =
+                  dataRow("CSS Sensor TVOC", data[index].cssSensor_TVOC, " ");
+                document.getElementById("data").rows["UV"].innerHTML = dataRow(
+                  "UV",
+                  data[index].UV,
+                  " "
+                );
+                document.getElementById("data").rows["accelX"].innerHTML = dataRow(
+                  "Acceleration X",
+                  data[index].accelX,
+                  " "
+                );
+                document.getElementById("data").rows["accelY"].innerHTML = dataRow(
+                  "Acceleration Y",
+                  data[index].accelY,
+                  " "
+                );
+                document.getElementById("data").rows["accelZ"].innerHTML = dataRow(
+                  "Acceleration Z",
+                  data[index].accelZ,
+                  " "
+                );
+                document.getElementById("data").rows["magneticX"].innerHTML = dataRow(
+                  "Magnetic X",
+                  data[index].magnetX,
+                  " "
+                );
+                document.getElementById("data").rows["magneticY"].innerHTML = dataRow(
+                  "Magnetic Y",
+                  data[index].magnetY,
+                  " "
+                );
+                document.getElementById("data").rows["magneticZ"].innerHTML = dataRow(
+                  "Magnetic Z",
+                  data[index].magnetZ,
+                  " "
+                );
+                document.getElementById("data").rows["gyroX"].innerHTML = dataRow(
+                  "Gyro X",
+                  data[index].gyroX,
+                  " "
+                );
+                document.getElementById("data").rows["gyroY"].innerHTML = dataRow(
+                  "Gyro Y",
+                  data[index].gyroY,
+                  " "
+                );
+                document.getElementById("data").rows["gyroZ"].innerHTML = dataRow(
+                  "Gyro Z",
+                  data[index].gyroZ,
+                  " "
+                );
+                if (index < 500) {
+                  index++;
+                } else {
+                  index = 0;
+                }
+              }
+              console.log(
+                "The Current Time Is: " +
+                  theTime.getHours() +
+                  ":" +
+                  theTime.getMinutes() +
+                  ":" +
+                  theTime.getSeconds()
+              );
+            }
+          </script>
+    </head>
+    
+
+    <body>
+        
+        <ul>
+            <li><a href="#homepage">Home</a></li>
+            <li><a href="#launch">Launch Button</a></li>
+            <li><a href="#roll">Feeling Lucky?</a></li>
+            <li><a href="#board">Board</a></li>
+            <li><a href="../Main/login.html">Logout</a></li>
+          </ul>
+    
+        <section id="homepage">
+        <h1>
+            Kevin Duong
+            <span></span>
+        </h1>
+        <br>
+        <blockquote id="bq3">Network Engineer
+
+        </blockquote><br>
+        <h5> "It justs works" - Some Poor Fool In IT<span2></span2></h5>
+        </section>
+     <section id="launch">      
+          <blockquote id="bq2">
+            Welcome to the UAT Space Program. <br /> Please click Start to begin the
+            countdown procedure.<span id="span2"></span>
+          </blockquote>
+        <br />
+        <button id="Start_Timer" class="button" onclick="start(); countdowntimer()" >Start Timer</button>
+        <button id="Abort_Mission" class="button" onclick="stop()">Abort Mission</button>
+      
+      <div style="text-align: center" class="text">
+      <p>Countdown Status: <span></span></p><p id="countdownstatus">Waiting For Start...</p>
+      
+    </div>
+          </div>
+          <div>
+        
+            <table id="data" style="padding: 12px">
+              <thead>
+                <tr>
+                  <th>Data Type</th>
+                  <th>Measurement</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="seconds"></tr>
+                <tr id="latitude"></tr>
+                <tr id="longitude"></tr>
+                <tr id="gpsSensorAlt"></tr>
+                <tr id="bmpSensorAlt"></tr>
+                <tr id="bmpSensorPres"></tr>
+                <tr id="bmpSensorTemp"></tr>
+                <tr id="digiSensorTemp"></tr>
+                <tr id="cssSensorTemp"></tr>
+                <tr id="cssSensorECO2"></tr>
+                <tr id="cssSensorTVOC"></tr>
+                <tr id="UV"></tr>
+                <tr id="accelX"></tr>
+                <tr id="accelY"></tr>
+                <tr id="accelZ"></tr>
+                <tr id="magneticX"></tr>
+                <tr id="magneticY"></tr>
+                <tr id="magneticZ"></tr>
+                <tr id="gyroX"></tr>
+                <tr id="gyroY"></tr>
+                <tr id="gyroZ"></tr>
+              </tbody>
+            </table>
+            <br />
+            <br />
+  
+        </div>
+  
+
+    </section>
+
+    <section id="roll">
+    <div style="width: 100%; padding: 20%;" >
+        
+     <!-- The Crap Game -->
+    <!-- Shows the diffent ids for the dice, total, and outcome-->	
+    <div id="die1Res">Dice 1 Status</div>
+    <div id="die2Res">Dice 2 Status</div>
+    <div id="diceSum">Dice Sum </div>
+    <div id="crapsStatus">Dice Sum Status</div>
+    
+
+    <!--Button to start the java commands-->	
+    <button onclick="playcraps()" class="button">Play Carps</button>
+  
+
+    </section>
+
+    <section id="board">
+      <blockquote id="bq3">Long Term Goal
+
+      </blockquote>
+      <p>
+        1.Acquiring my bachelor at UAT<br>
+        2.Acquiring my CCNA<br>
+        3.Acquiring proper eqipment to start a VM Sever<br>
+        4.Acquiring an apprenticeship<br>
+        5.Deploying a whole home area network<br>
+        6.Landing a Job 
+      </p>
+    </section>
+
+    <section id="">
+
+        
+    </section>
+    <footer>University of Advancing Technology - 2625 W. Baseline Tempe, AZ 85283 | <a data-auto-recognition="true" href="kdduongaz@gmail.com">Kdduongaz@gmail.com.</a></footer>
+    </body>
+    
+    
+</html>
