@@ -19,7 +19,7 @@ function checkCreds(){
         document.getElementById("loginStaus").innerHTML = "Invaded Code"
     }else {
         alert("Welcome Back " + fullname);
-        location.replace("index.html");
+        location.replace("./");
     }
 
 }
