@@ -128,14 +128,14 @@ section{
   display: flex;
 }
 #homepage{
-  background-image: url(me.JPG);
+  background-image: url('../img/me.JPG');
   background-repeat: no-repeat;
   background-position: 66%;
   align-items: center;
   justify-content: center;
 }
 #launch{
-  background-image: url(2.GIF);
+  background-image: url('../img/2.GIF');
   background-repeat: no-repeat;
 
   background-size: cover;
@@ -146,7 +146,7 @@ section{
  
 }
 #roll{
-  background-image: url(3.JPG);
+  background-image: url('../img/3.JPG');
   background-repeat: no-repeat;
   background-position: 80%;
  background-size: 30%;
@@ -181,11 +181,11 @@ tr {
   backdrop-filter: blur(1px);
 }
 
-  div{color: #663131;
+ div{color: #663131;
     font-size: 45px;
   }
- 
-  .button{
+
+.button{
       color:#d8d4cf;
       background-color: rgb(124, 156, 216);
       width: 7.5%;
