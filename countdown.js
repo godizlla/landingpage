@@ -12,7 +12,7 @@ function stop() {
   clearInterval(timer);
   document.getElementById("Abort_Mission").disabled = true;
   document.getElementById("Start_Timer").disabled = false;
-  location.replace("main.html");
+  location.replace("index.html");
 }
 function getData() {
   var loadedData = loadData();
