@@ -135,7 +135,7 @@ section{
   justify-content: center;
 }
 #launch{
-  background-image: url('../img/2.GIF');
+  background-image: url('https://media.giphy.com/media/VJzFfY0YvvAttyd3qn/giphy.gif');
   background-repeat: no-repeat;
 
   background-size: cover;
