@@ -128,14 +128,14 @@ section{
   display: flex;
 }
 #homepage{
-  background-image: url(../img/me.JPG);
+  background-image: url(/me.JPG);
   background-repeat: no-repeat;
   background-position: 66%;
   align-items: center;
   justify-content: center;
 }
 #launch{
-  background-image: url(../img/2.GIF);
+  background-image: url(2.GIF);
   background-repeat: no-repeat;
 
   background-size: cover;
@@ -146,7 +146,7 @@ section{
  
 }
 #roll{
-  background-image: url(../img/3.JPG);
+  background-image: url(3.JPG);
   background-repeat: no-repeat;
   background-position: 80%;
  background-size: 30%;
