@@ -128,7 +128,7 @@ section{
   display: flex;
 }
 #homepage{
-  background-image: url(/me.JPG);
+  background-image: url(me.JPG);
   background-repeat: no-repeat;
   background-position: 66%;
   align-items: center;
