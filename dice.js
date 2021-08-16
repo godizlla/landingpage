@@ -7,8 +7,8 @@ function playcraps(){
     var die1 = Math.ceil(Math.random() * 6);
     var die2 = Math.ceil(Math.random() * 6);
     //Aduio For winning at craps 
-    var win = new Audio("Final Fantasy VII - Victory.mp3");
-    var tie = new Audio("lose.mp3");
+    win = new Audio("Final Fantasy VII - Victory.mp3");
+    tie = new Audio("lose.mp3");
     //Replaces the elements on the html file with the dice numbers
     document.getElementById("die1Res").innerHTML = die1;
     document.getElementById("die2Res").innerHTML = die2;
